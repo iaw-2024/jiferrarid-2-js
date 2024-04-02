@@ -1,5 +1,10 @@
 const express = require("express");
+const cors = require('cors');
+
 const app = express();
+
+app.use(cors());
+
 
 app.get("/express", (req, res) => res.send("Express on Vercel!"));
 app.get("/cliente_servidor", (req, res) => res.send("Cliente Servidor on Vercel!"));
