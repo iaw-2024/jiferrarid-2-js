@@ -1,6 +1,6 @@
 const generateComment = () => ({
    name: "Bot"+(Math.floor(Math.random()*1000)),
-   comment: "Buen post!"
+   comment: "Buen post! toma mi +"+Math.round(Math.random()*2+8)
 });
 
 function m1(req, res){
