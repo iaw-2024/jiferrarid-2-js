@@ -1,15 +1,10 @@
-function m1(){
-    fetch('http://localhost:3001/express')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Error en la respuesta.');
-            }
-            return response.text();
-        })
-        .then(data => {
-            console.log(data); 
-        })
-        .catch(error => {
-            console.error('Error:', error);
-        });
+const generateComment = () => ({
+   name: "Bot"+(Math.floor(Math.random()*1000)),
+   comment: "Buen post!"
+});
+
+function m1(req, res){
+    const user = generateComment();
+    res.json(user);
 }
+module.exports=m1;
