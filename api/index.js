@@ -5,10 +5,16 @@ const app = express();
 
 app.use(cors());
 
-const m1=require('../public/express/index.js');
+const generateComment=require('../public/express/index.js');
 
-app.get("/express", (req, res) => res.send("Express on Vercel!"));
-app.get("/cliente_servidor", (req, res) =>  m1(req, res))
+app.get("/express", (req, res) => {
+    let comment=generateComment()
+    res.send(comment.name+" "+comment.comment)
+});
+app.get("/cliente_servidor", (req, res) => {
+    let comment=generateComment()
+    res.json(comment)
+});
 app.use(express.static('public'))
 
 

@@ -1,4 +1,4 @@
-function m1(){
+function getComment(){
     fetch('http://localhost:3001/cliente_servidor')
         .then(response => {
             if (!response.ok) {
@@ -8,6 +8,7 @@ function m1(){
         })
         .then(data => {
             console.log(data)
+            let json = JSON.parse(data)
             let commentContainer=document.createElement("div")
             commentContainer.classList.add("flex")
             commentContainer.classList.add("align-top")
@@ -28,11 +29,14 @@ function m1(){
             commentAvatarContainer.append(commentAvatar)
             commentContainer.appendChild(commentText)
             commentText.appendChild(commentName)
-            commentName.append(data.name)
-            commentContent.append(data.comment)
+            commentName.append(json.name)
+            commentContent.append(json.comment)
             commentText.appendChild(commentContent)
         })
         .catch(error => {
             console.error('Error:', error);
         });
 }
+getComment()
+getComment()
+getComment()
