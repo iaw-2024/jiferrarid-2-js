@@ -29,7 +29,7 @@ function getComment(){
             commentAvatarContainer.append(commentAvatar)
             commentContainer.appendChild(commentText)
             commentText.appendChild(commentName)
-            commentName.append(json.name)
+            commentName.append(json.user)
             commentContent.append(json.comment)
             commentText.appendChild(commentContent)
         })
