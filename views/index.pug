@@ -1,0 +1,52 @@
+html
+    head
+        meta(charset="UTF-8")
+        meta(
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+        )
+        link(
+            href='https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css'
+            rel="stylesheet"
+        ) 
+        title= "Express"
+    body(class='mx-auto max-w-4xl p-4 sm:px-6 lg:px-8 text-justify bg-yellow-50')         
+        div(class="flex align-top gap-4 py-2")
+            div(
+                class="col-2"
+                style="width:10%"
+            )
+                img(
+                    class="py-4"
+                    src="https://avatars.githubusercontent.com/u/64752121"
+                )
+            div
+                div
+                    h2(class="text-3xl")= user1
+                div(class="font-serif py-2")= comment1     
+        div(class="flex align-top gap-4 py-2")
+            div(
+                class="col-2"
+                style="width:10%"
+            )
+                img(
+                    class="py-4"
+                    src="https://avatars.githubusercontent.com/u/64752121"
+                )
+            div
+                div
+                    h2(class="text-3xl")= user2
+                div(class="font-serif py-2")= comment2     
+        div(class="flex align-top gap-4 py-2")
+            div(
+                class="col-2"
+                style="width:10%"
+            )
+                img(
+                    class="py-4"
+                    src="https://avatars.githubusercontent.com/u/64752121"
+                )
+            div
+                div
+                    h2(class="text-3xl")= user3
+                div(class="font-serif py-2")= comment3

@@ -1,15 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-</head>
-<body class="bg-yellow-50 mx-auto max-w-4xl p-4 sm:px-6 lg:px-8 text-justify">
-    <script>
-        var comment={"user":"Bot0","comment":"Buen post!!"}
-        try { 
+function getComment(){
+    fetch('http://localhost:3001/cliente_servidor')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Error en la respuesta.');
+            }
+            return response.text();
+        })
+        .then(data => {
+            console.log(data)
+            let json=JSON.parse(data)
             let commentContainer=document.createElement("div")
             commentContainer.classList.add("flex")
             commentContainer.classList.add("align-top")
@@ -18,7 +17,6 @@
             let commentAvatarContainer=document.createElement("div")
             let commentAvatar=document.createElement("img")
             commentAvatar.setAttribute("src","image.png")
-            commentAvatar.style.width="50%"
             commentAvatar.classList.add("py-4")
             let commentText=document.createElement("div")
             let commentName=document.createElement("h2")
@@ -26,17 +24,19 @@
             let commentContent=document.createElement("div")
             commentContent.classList.add("font-serif")
             commentContent.classList.add("py-2")
-            document.body.appendChild(commentContainer)
+            document.getElementById("comments").appendChild(commentContainer)
             commentContainer.appendChild(commentAvatarContainer)
             commentAvatarContainer.append(commentAvatar)
             commentContainer.appendChild(commentText)
             commentText.appendChild(commentName)
-            commentName.append(comment.user)
+            commentName.append(json.user)
+            commentContent.append(json.comment)
             commentText.appendChild(commentContent)
-            commentContent.append(comment.comment)
-        } catch (err) {
-            console.error(err)
-        }
-    </script>
-</body>
-</html>
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+}
+getComment()
+getComment()
+getComment()
