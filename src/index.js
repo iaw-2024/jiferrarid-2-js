@@ -8,7 +8,7 @@ function getComment(){
         })
         .then(data => {
             console.log(data)
-            let json = JSON.parse(data)
+            let json=JSON.parse(data)
             let commentContainer=document.createElement("div")
             commentContainer.classList.add("flex")
             commentContainer.classList.add("align-top")
